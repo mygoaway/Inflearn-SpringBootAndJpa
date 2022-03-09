@@ -54,8 +54,6 @@ public class OrderServiceTest {
         assertEquals("주문 수량만큼 재고가 줄어야 한다", 7, book.getStockQuantity());
     }
 
-
-
     @Test(expected = NotEnoughtStockException.class)
     public void 상품주문_재고수량초과() throws Exception {
         // given
