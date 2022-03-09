@@ -34,7 +34,7 @@ public class ItemService {
         return itemRepository.findOne(id);
     }
 
-    public List<Item> findAll() {
+    public List<Item> findItems() {
         return itemRepository.findAll();
     }
 }
