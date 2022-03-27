@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MemberApiController {
     private final MemberService memberService;
-
     /*
     * 조회 V1: 응답 값으로 엔티티를 직접 외부에 노출한다.
     * 문제점 :
