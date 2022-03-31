@@ -92,7 +92,8 @@ public class OrderSimpleApiController {
     /*
     * V4. JPA에서 DTO로 바로 조회
     * - 쿼리 1번 호출
-    * - select 절에서 원하는 데이터만 선택해서 조회
+    * - 장점 : select 절에서 원하는 데이터만 선택해서 조회(성능 최적화)
+    * - 단점이라면, 재사용성이 부족함
     * */
     @GetMapping("/api/v4/simple-orders")
     public List<OrderSimpleQueryDto> ordersV4() {
