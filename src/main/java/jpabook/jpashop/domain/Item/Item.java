@@ -1,7 +1,7 @@
 package jpabook.jpashop.domain.Item;
 
 import jpabook.jpashop.domain.Category;
-import jpabook.jpashop.exception.NotEnoughtStockException;
+import jpabook.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 public abstract class Item {
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name="item_id")
     private Long id;
 
@@ -37,7 +36,7 @@ public abstract class Item {
     public void removeStock(int quantity) {
         int restStock = this.stockQuantity - quantity;
         if(restStock < 0) {
-            throw new NotEnoughtStockException("need more stock");
+            throw new NotEnoughStockException("need more stock");
         }
         this.stockQuantity = restStock;
     }

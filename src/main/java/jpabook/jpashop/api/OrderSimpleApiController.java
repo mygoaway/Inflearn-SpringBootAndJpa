@@ -3,7 +3,7 @@ package jpabook.jpashop.api;
 import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderStatus;
-import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderRepositoryOld;
 import jpabook.jpashop.repository.OrderSearch;
 import jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryDto;
 import jpabook.jpashop.repository.order.simplequery.OrderQueryRepository;
@@ -28,7 +28,7 @@ import static java.util.stream.Collectors.*;
 @RestController
 @RequiredArgsConstructor
 public class OrderSimpleApiController {
-    private final OrderRepository orderRepository;
+    private final OrderRepositoryOld orderRepository;
     private final OrderQueryRepository orderQueryRepository;
     /*
     * V1. 엔티티 직접 노출

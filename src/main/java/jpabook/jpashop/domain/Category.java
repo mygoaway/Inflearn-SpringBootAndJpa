@@ -14,8 +14,7 @@ import static javax.persistence.FetchType.*;
 @Getter
 @Setter
 public class Category {
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name="category_id")
     private Long id;
 

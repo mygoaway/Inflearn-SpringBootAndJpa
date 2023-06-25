@@ -17,8 +17,7 @@ import static org.junit.Assert.*;
 @Transactional
 public class ItemServiceTest {
 
-    @Autowired
-    ItemService itemService;
+    @Autowired ItemService itemService;
 
     @Test
     @Rollback(false)
@@ -32,5 +31,23 @@ public class ItemServiceTest {
 
         // then
         assertEquals(item, itemService.findOne(itemId));
+    }
+
+    @Test
+    @Rollback(false)
+    public void 아이템_수정() throws Exception {
+        // given
+        Item item = new Album();
+        item.setName("박효신");
+
+        // when
+        Long itemId = itemService.saveItem(item);
+
+        itemService.updateItem(itemId, "이광재", 500, 500);
+
+        // then
+        Item findItem = itemService.findOne(itemId);
+
+        assertEquals(findItem.getName(), "이광재");
     }
 }

@@ -5,7 +5,7 @@ import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
 import jpabook.jpashop.domain.OrderStatus;
-import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderRepositoryOld;
 import jpabook.jpashop.repository.OrderSearch;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class OrderApiController {
 
-    private final OrderRepository orderRepository;
+    private final OrderRepositoryOld orderRepository;
 
     /**
      * V1. 엔티티 직접 노출

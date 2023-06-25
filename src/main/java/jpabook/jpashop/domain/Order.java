@@ -19,8 +19,7 @@ import static javax.persistence.FetchType.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 직접 생성하면 안된다. 코드를 제약하는 스타일로 설계하자(유지 보수 편리)
 public class Order {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name="order_id")
     private Long id;
 

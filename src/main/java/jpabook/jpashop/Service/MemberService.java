@@ -16,13 +16,6 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    /*
-    @Autowired
-    public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
-    */
-
     // 회원가입
     @Transactional
     public Long join(Member member){

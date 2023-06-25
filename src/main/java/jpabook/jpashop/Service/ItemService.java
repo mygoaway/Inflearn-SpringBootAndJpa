@@ -1,6 +1,5 @@
 package jpabook.jpashop.Service;
 
-import jpabook.jpashop.domain.Item.Book;
 import jpabook.jpashop.domain.Item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,8 @@ public class ItemService {
 
     @Transactional
     public Item updateItem(Long itemId, String name, int price, int stockQuantity) {
-        Item findItem = itemRepository.findOne(itemId);
+        // JPA의 변경감지기능 사용(Dirty Checking)
+        Item findItem = itemRepository.findById(itemId).get();
         findItem.setPrice(price);
         findItem.setName(name);
         findItem.setStockQuantity(stockQuantity);
@@ -31,7 +31,7 @@ public class ItemService {
     }
 
     public Item findOne(Long id) {
-        return itemRepository.findOne(id);
+        return itemRepository.findById(id).get();
     }
 
     public List<Item> findItems() {
