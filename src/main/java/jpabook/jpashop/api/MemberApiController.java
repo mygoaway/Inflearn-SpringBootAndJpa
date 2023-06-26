@@ -40,10 +40,10 @@ public class MemberApiController {
     public Result membersV2 (){
         List<Member> findMembers = memberService.findMembers();
         // 엔티티 -> DTO 변환
-        List<MemberDTO> collect = findMembers.stream()
-                .map(m -> new MemberDTO(m.getName()))
+        List<MemberResponse> members = findMembers.stream()
+                .map(m -> new MemberResponse(m.getName()))
                 .collect(Collectors.toList());
-        return new Result(collect.size(), collect);
+        return new Result(members.size(), members);
     }
 
     @Data
@@ -55,7 +55,7 @@ public class MemberApiController {
 
     @Data
     @AllArgsConstructor
-    static class MemberDTO {
+    static class MemberResponse {
         private String name;
     }
 
@@ -114,6 +114,7 @@ public class MemberApiController {
 
     @Data
     static class updateMemberRequest {
+        @NotEmpty
         private String name;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class OrderQueryRepository {
+public class OrderSimpleQueryRepository {
 
     private final EntityManager em;
 
